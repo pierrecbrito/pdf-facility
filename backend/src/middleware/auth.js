@@ -1,4 +1,4 @@
-const supabas = require('../supabase');
+const supabas = require('../config/supabase');
 
 module.exports = async (req, res, next) => {
     const token = req.headers.authorization?.split('Bearer ')[1];
