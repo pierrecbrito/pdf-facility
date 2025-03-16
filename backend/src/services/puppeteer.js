@@ -21,9 +21,10 @@ exports.convertUrlToPdf = async (url) => {
 
         await browser.close();
 
-        const pdfBase64 = pdfBuffer.toString('base64');
 
-        return pdfBase64;
+        const pdfUtf8 = await Buffer.from(pdfBuffer).toString('base64').replace(/\n/g, '');
+
+        return pdfUtf8;
     } catch (error) {
         console.error('puppette error:', error);
         throw new Error('Failed to convert URL to PDF');
