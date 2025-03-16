@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { convertUrl } = require('../controllers/urlController');
+const { convertUrlToPdf } = require('../controllers/urlController');
 const authMiddleware = require('../middleware/auth');
 
-router.post('/convert', authMiddleware, convertUrl);
+router.post('/convert', authMiddleware, convertUrlToPdf);
 
 module.exports = router;
